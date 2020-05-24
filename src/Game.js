@@ -134,10 +134,10 @@ function Game({strings, notes}){
 
             {isStarted && !gameOver && (
                 <div>
-                    <p>The game has begun</p>
+                    <p>Notes left: {gameNotes.length}</p>
                     <p>Guess the note</p>
-                    <p>{currentNote.string} : {currentNote.fret}</p>
-            <p>{showNote && currentNote.note}</p>
+                    <p style={{fontSize: '5rem'}}>{currentNote.string} : {currentNote.fret}</p>
+            <p style={{fontSize: '3rem'}}>{showNote && currentNote.note}</p>
                     <button onClick={()=> setShowNote(true)}>Show Note</button><button onClick={handleNext}>Next Note</button>
                 </div>
             )}
