@@ -170,5 +170,265 @@ export const fretBoard = {
             note: 'F',
             sound: '',
         },
+        
+    },
+    'D String': {
+        open: {
+            note: 'D',
+            sound: '',
+        },
+        '1st Fret': {
+            note: 'D#/E♭',
+            sound: '',
+        },
+        '2nd Fret': {
+            note: 'E',
+            sound: '',
+        },
+        '3rd Fret': {
+            note: 'F',
+            sound: '',
+        },
+        '4th Fret': {
+            note: 'F#/G♭',
+            sound: '',
+        },
+        '5th Fret': {
+            note: 'G',
+            sound: '',
+        },
+        '6th Fret': {
+            note: 'G#/A♭',
+            sound: '',
+        },
+        '7th Fret': {
+            note: 'A',
+            sound: '',
+        },
+        '8th Fret': {
+            note: 'A#/B♭',
+            sound: '',
+        },
+        '9th Fret': {
+            note: 'B',
+            sound: '',
+        },
+        '10th Fret': {
+            note: 'C',
+            sound: '',
+        },
+        '11th Fret': {
+            note: 'C#/D♭',
+            sound: '',
+        },
+        '12th Fret': {
+            note: 'D',
+            sound: '',
+        },
+        '13th Fret': {
+            note: 'D#/E♭',
+            sound: '',
+        },
+        '14th Fret': {
+            note: 'E',
+            sound: '',
+        },
+        '15th Fret': {
+            note: 'F',
+            sound: '',
+        },
+        '16th Fret': {
+            note: 'F#/G♭',
+            sound: '',
+        },
+        '17th Fret': {
+            note: 'G',
+            sound: '',
+        },
+        '18th Fret': {
+            note: 'G#/A♭',
+            sound: '',
+        },
+        '19th Fret': {
+            note: 'A',
+            sound: '',
+        },
+        '20th Fret': {
+            note: 'A#/B♭',
+            sound: '',
+        },
+    },
+    'G String': {
+        open: {
+            note: 'G',
+            sound: '',
+        },
+        '1st Fret': {
+            note: 'G#/A♭',
+            sound: '',
+        },
+        '2nd Fret': {
+            note: 'A',
+            sound: '',
+        },
+        '3rd Fret': {
+            note: 'A#/B♭',
+            sound: '',
+        },
+        '4th Fret': {
+            note: 'B',
+            sound: '',
+        },
+        '5th Fret': {
+            note: 'C',
+            sound: '',
+        },
+        '6th Fret': {
+            note: 'C#/D♭',
+            sound: '',
+        },
+        '7th Fret': {
+            note: 'D',
+            sound: '',
+        },
+        '8th Fret': {
+            note: 'D#/E♭',
+            sound: '',
+        },
+        '9th Fret': {
+            note: 'E',
+            sound: '',
+        },
+        '10th Fret': {
+            note: 'F',
+            sound: '',
+        },
+        '11th Fret': {
+            note: 'F#/G♭',
+            sound: '',
+        },
+        '12th Fret': {
+            note: 'G',
+            sound: '',
+        },
+        '13th Fret': {
+            note: 'G#/A♭',
+            sound: '',
+        },
+        '14th Fret': {
+            note: 'A',
+            sound: '',
+        },
+        '15th Fret': {
+            note: 'A#/B♭',
+            sound: '',
+        },
+        '16th Fret': {
+            note: 'B',
+            sound: '',
+        },
+        '17th Fret': {
+            note: 'C',
+            sound: '',
+        },
+        '18th Fret': {
+            note: 'C#/D♭',
+            sound: '',
+        },
+        '19th Fret': {
+            note: 'D',
+            sound: '',
+        },
+        '20th Fret': {
+            note: 'D#/E♭',
+            sound: '',
+        },
+    },
+    'B String': {
+        open: {
+            note: 'B',
+            sound: '',
+        },
+        '1st Fret': {
+            note: 'C',
+            sound: '',
+        },
+        '2nd Fret': {
+            note: 'C#/D♭',
+            sound: '',
+        },
+        '3rd Fret': {
+            note: 'D',
+            sound: '',
+        },
+        '4th Fret': {
+            note: 'D#/E♭',
+            sound: '',
+        },
+        '5th Fret': {
+            note: 'E',
+            sound: '',
+        },
+        '6th Fret': {
+            note: 'F',
+            sound: '',
+        },
+        '7th Fret': {
+            note: 'F#/G♭',
+            sound: '',
+        },
+        '8th Fret': {
+            note: 'G',
+            sound: '',
+        },
+        '9th Fret': {
+            note: 'G#/A♭',
+            sound: '',
+        },
+        '10th Fret': {
+            note: 'A',
+            sound: '',
+        },
+        '11th Fret': {
+            note: 'A#/B♭',
+            sound: '',
+        },
+        '12th Fret': {
+            note: 'B',
+            sound: '',
+        },
+        '13th Fret': {
+            note: 'C',
+            sound: '',
+        },
+        '14th Fret': {
+            note: 'C#/D♭',
+            sound: '',
+        },
+        '15th Fret': {
+            note: 'D',
+            sound: '',
+        },
+        '16th Fret': {
+            note: 'D#/E♭',
+            sound: '',
+        },
+        '17th Fret': {
+            note: 'E',
+            sound: '',
+        },
+        '18th Fret': {
+            note: 'F',
+            sound: '',
+        },
+        '19th Fret': {
+            note: 'F#/G♭',
+            sound: '',
+        },
+        '20th Fret': {
+            note: 'G',
+            sound: '',
+        },
     }
+    
 }
