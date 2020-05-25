@@ -1,4 +1,5 @@
 import React from 'react'
+import './Game.css';
 
 function Game({strings, notes}){
     const [isStarted, setIsStarted] = React.useState(false);
@@ -104,7 +105,7 @@ function Game({strings, notes}){
         getRandomNote();
     }
     return (
-        <div>
+        <div id="game">
             {!isStarted && 
             <>
             <p>Pick a mode</p>
@@ -114,8 +115,10 @@ function Game({strings, notes}){
                 <option selected={mode === 'hard'}>Hard - All notes all frets</option>
             </select>
             <p>Pick your strings</p>
+            <div className="string-container">
+
             {strings.map(string => {
-               return (<>
+                return (<>
                <input 
                key={string} 
                type="checkbox" 
@@ -128,17 +131,24 @@ function Game({strings, notes}){
                <label htmlFor={string}>{string}</label>
                </>)
             })}
-            <button onClick={handleStart}>Start!</button>
+            </div>
+            <button className="button-start" onClick={handleStart}>Start!</button>
             </>
             }
 
             {isStarted && !gameOver && (
-                <div>
+                <div className="game-started">
                     <p>Notes left: {gameNotes.length}</p>
                     <p>Guess the note</p>
                     <p style={{fontSize: '5rem'}}>{currentNote.string} : {currentNote.fret}</p>
-            <p style={{fontSize: '3rem'}}>{showNote && currentNote.note}</p>
-                    <button onClick={()=> setShowNote(true)}>Show Note</button><button onClick={handleNext}>Next Note</button>
+                    <p style={{fontSize: '3rem'}}> {showNote && currentNote.note}</p>
+                    <div className="game-actions">
+                        {showNote ? 
+                            <button onClick={()=> setShowNote(false)}>Hide Note</button> : 
+                            <button onClick={()=> setShowNote(true)}>Show Note</button>
+                        }
+                        <button onClick={handleNext}>Next Note</button>
+                    </div>
                 </div>
             )}
 
