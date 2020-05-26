@@ -134,7 +134,7 @@ function Game({strings, notes}){
                </>)
             })}
             </div>
-            <button className="button-start" onClick={handleStart}>Start!</button>
+            <button className="button-start" onClick={handleStart} disabled={!isStarted && gameNotes.length == 0}>Start!</button>
             </>
             }
 

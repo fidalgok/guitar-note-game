@@ -30,3 +30,8 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
