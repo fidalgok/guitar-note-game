@@ -12,7 +12,7 @@ function Game({strings, notes}){
     const [showNote, setShowNote] = React.useState(false);
 
     React.useEffect(()=>{
-        if(!gameNotes.length){
+        if(!gameNotes.length && isStarted){
             setGameOver(true);
         }
     });
@@ -81,12 +81,14 @@ function Game({strings, notes}){
         setMode(newMode);
     }
     function handleStringChange(e){
-        console.log(e.target.checked, e.target.value)
         if(e.target.checked){
             setGameStrings([...gameStrings, e.target.value]);
             // collect the notes to add to the game for the given string
             const newNotes = notes.filter(note => note.string === e.target.value);
-            setGameNotes([...gameNotes, ...newNotes]);
+            // need to filter based on mode now... otherwise I'm adding too many notes to the game
+            // these notes only contain the newly added string
+            const newGameNotes = filterNotesByMode(mode, newNotes)
+            setGameNotes([...gameNotes, ...newGameNotes]);
         } else {
             setGameStrings(gameStrings.filter(string => string !== e.target.value));
             setGameNotes(gameNotes.filter(note => note.string !== e.target.value));
@@ -138,7 +140,7 @@ function Game({strings, notes}){
 
             {isStarted && !gameOver && (
                 <div className="game-started">
-                    <p>Notes left: {gameNotes.length}</p>
+                    <p>Notes left: {gameNotes.length - 1 <= 0 ? 'last note' : gameNotes.length - 1}</p>
                     <p>Guess the note</p>
                     <p style={{fontSize: '5rem'}}>{currentNote.string} : {currentNote.fret}</p>
                     <p style={{fontSize: '3rem'}}> {showNote && currentNote.note}</p>
@@ -161,6 +163,38 @@ function Game({strings, notes}){
 
         </div>
     )
+}
+
+function filterNotesByMode(mode, notes){
+    if(mode === 'easy'){
+        // need to change game notes to only include the first 12 frets of natural notes
+        const newGameNotes = notes.filter(note => {
+            if(note.noteType === 'accidental') return false;
+            if( isNaN(Number(note.fret.slice(0, 2)) && note.noteType === 'natural')){
+                return true
+            } else if(Number(note.fret.slice(0,2) <= 12 && note.noteType === 'natural')){
+                return true
+            }
+            return false
+        });
+        return newGameNotes;
+        
+    }else if(mode === 'medium'){
+        const newGameNotes = notes.filter(note => {
+            
+            if(note.noteType === 'accidental') return false;
+            if( isNaN(Number(note.fret.slice(0, 2)) && note.noteType === 'natural')){
+                return true
+            } else if(typeof Number(note.fret.slice(0,2) < 23 && note.noteType === 'natural')){
+                return true
+            }
+            return false
+        });
+        return newGameNotes;
+
+    }else if(mode === 'hard'){
+        return notes;
+    }
 }
 
 export default Game;
