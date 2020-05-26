@@ -59,7 +59,9 @@ function Game({strings, notes}){
                     return true
                 }
                 return false
-            });
+            })
+            // now filter based on strings selected
+            .filter(note => gameStrings.find(string => note.string === string));
             setGameNotes(newGameNotes);
             
         }else if(newMode === 'medium'){
@@ -72,11 +74,14 @@ function Game({strings, notes}){
                     return true
                 }
                 return false
-            });
+            })
+            // now filter based on strings selected
+            .filter(note => gameStrings.find(string => note.string === string));
             setGameNotes(newGameNotes);
 
         }else if(newMode === 'hard'){
-            setGameNotes(notes);
+            const newGameNotes = notes.filter(note => gameStrings.find(string => note.string === string));
+            setGameNotes(newGameNotes);
         }
         setMode(newMode);
     }
