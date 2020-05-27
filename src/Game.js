@@ -42,8 +42,8 @@ function Game({strings, notes}){
     function handleEnd(){
         // reset the game
         setIsStarted(false);
-        setGameNotes(notes);
-        setGameStrings(strings)
+        const newGameNotes = filterNotesByMode(mode, notes).filter(note => gameStrings.find(string => note.string === string));
+        setGameNotes(newGameNotes);
         setGameOver(false);
         setCurrentNote({string: '', note: '', fret: ''});
     }
